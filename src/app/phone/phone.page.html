@@ -1,0 +1,26 @@
+<ion-content padding>
+  <div style="margin: 100px 0 0 0;">
+
+    <img src="assets/img/Logo.png" class="img-center">
+    <p text-center>
+      Conectando você ao seu estilo.
+    </p>
+
+    <h4 text-center>Digite o número do seu celular:</h4>
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="phone" class="text-primary"></ion-icon>
+         Seu Celular:
+        </ion-label>
+        <ion-input type="text" placeholder="(11) 9 99999 9999"></ion-input>
+      </ion-item>
+    </form>
+  </div>
+</ion-content>
+<ion-footer padding>
+  <ion-button expand="full" color="dark" tappable (click)="confirmSMS()">
+    Continuar
+  </ion-button>
+</ion-footer>

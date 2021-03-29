@@ -1,0 +1,124 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home-client" [text]="buttonText"></ion-back-button>
+
+            <!--            <ion-menu-button></ion-menu-button>-->
+        </ion-buttons>
+        <!--        <ion-col>-->
+        <!--            <img src="../assets/img/search.png" width="18px" style="margin-top: 5px;">-->
+        <!--        </ion-col>-->
+
+        <ion-title><img src="../assets/img/Logo-mini.png"></ion-title>
+
+        <ion-buttons style="float:right;">
+
+            <ion-col>
+                <img src="../assets/img/heart.png" width="20px">
+            </ion-col>
+            <ion-col>
+                <img src="../assets/img/explore.png" width="20px">
+            </ion-col>
+
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <!--slides-->
+    <ion-slides class="to-top" pager>
+        <ion-slide *ngFor="let image of trip.images">
+            <img [src]="image" alt="" style=" width: 100%; height: 500px;">
+        </ion-slide>
+    </ion-slides>
+
+    <!--services-->
+    <ion-grid class="border-bottom dark-bg">
+        <ion-row>
+            <ion-col text-center>
+                <div class="text-sm">
+                    <div>
+                        <h6>{{trip.name}}</h6><br>
+                        <small>
+                            <ion-icon name="time" style="color: #0bb8cc;"></ion-icon>
+                            {{ trip.time }} - Por <b (click)="author()">{{trip.sub_name}}</b></small>
+                    </div>
+
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <!--high light-->
+    <div class="border-bottom">
+        <ul class="highlight">
+            <p *ngFor="let highlight of trip.highlights">
+                <span>{{ highlight }}</span>
+            </p>
+        </ul>
+    </div>
+
+    <!--booking form-->
+    <!--    <div class="booking-form card round" margin>-->
+    <!--        <div class="border-bottom" padding>-->
+    <!--            <h5>Preços</h5>-->
+
+    <!--            &lt;!&ndash;choose guest&ndash;&gt;-->
+    <!--            <ion-grid class="filters" no-padding margin-top>-->
+    <!--                <ion-row>-->
+    <!--                    <ion-col class="adult" width-70>-->
+    <!--                        <span ion-text color="primary"><strong>{{ trip.price_adult | currency:'USD':true }}</strong> Adults</span>-->
+    <!--                    </ion-col>-->
+    <!--                    <ion-col width-10 text-center>-->
+    <!--                        <ion-icon name="remove-circle" class="text-2x" tappable (click)="minusAdult()"-->
+    <!--                                  [hidden]="adults < 2"-->
+    <!--                                  color="secondary"></ion-icon>-->
+    <!--                    </ion-col>-->
+    <!--                    <ion-col width-10 text-center>{{ adults }}</ion-col>-->
+    <!--                    <ion-col width-10 text-center>-->
+    <!--                        <ion-icon name="add-circle" class="text-2x" tappable (click)="plusAdult()"-->
+    <!--                                  color="secondary"></ion-icon>-->
+    <!--                    </ion-col>-->
+    <!--                </ion-row>-->
+    <!--                <ion-row margin-top>-->
+    <!--                    <ion-col width-70>-->
+    <!--                        <span ion-text color="primary"><strong>{{ trip.price_child | currency:'USD':true }}</strong> Child (0-12 years)</span>-->
+    <!--                    </ion-col>-->
+    <!--                    <ion-col width-10 text-center>-->
+    <!--                        <ion-icon name="remove-circle" class="text-2x" tappable (click)="minusChildren()"-->
+    <!--                                  [hidden]="children < 1"-->
+    <!--                                  color="secondary"></ion-icon>-->
+    <!--                    </ion-col>-->
+    <!--                    <ion-col width-10 text-center>{{ children }}</ion-col>-->
+    <!--                    <ion-col width-10 text-center>-->
+    <!--                        <ion-icon name="add-circle" class="text-2x" tappable (click)="plusChildren()"-->
+    <!--                                  color="secondary"></ion-icon>-->
+    <!--                    </ion-col>-->
+    <!--                </ion-row>-->
+    <!--            </ion-grid>-->
+    <!--        </div>-->
+    <!--        <div padding class="form-bottom">-->
+    <!--            &lt;!&ndash;       <span ion-text color="dark" class="bold">{{ adults }} Adults</span> &ndash;&gt;-->
+    <!--            &lt;!&ndash;booking button&ndash;&gt;-->
+    <!--            <button ion-button class="pull-right" color="secondary" tappable (click)="checkout()">Book-->
+    <!--                Now {{ adults * trip.price_adult +-->
+    <!--                children * trip.price_child | currency:'USD':true }}-->
+    <!--            </button>-->
+    <!--            <div class="clear"></div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <!--description-->
+    <!--    <div class="border-bottom" padding>-->
+    <!--        <span ion-text color="primary" class="bold">DESCRIPTION</span>-->
+    <!--        <p ion-text>{{ trip.description }}</p>-->
+    <!--    </div>-->
+
+    <!--address-->
+    <!--    <div class="border-bottom" padding>-->
+    <!--        <span ion-text color="primary" class="bold">LOCATION</span>-->
+    <!--        <p ion-text>{{ trip.location }}</p>-->
+    <!--    </div>-->
+</ion-content>

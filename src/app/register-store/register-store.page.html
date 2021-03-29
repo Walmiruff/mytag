@@ -1,0 +1,58 @@
+<ion-content padding>
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="login" [text]="buttonText"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <div style="margin: 100px 0 0 0;">
+
+        <img src="assets/img/Logo.png" class="img-center">
+        <p text-center>
+            Conectando você ao seu estilo.
+        </p>
+
+        <h4 text-center>Cadastro da Loja</h4>
+        <!-- Login form -->
+        <form class="list-form" [formGroup]="dataForm" (submit)="createItem()">
+<!--            <ion-list>-->
+                <ion-item>
+                    <ion-label position="floating">
+                        <ion-icon name="person" class="text-primary"></ion-icon>
+                        Nome Completo
+                    </ion-label>
+                    <ion-input formControlName="title" required type="text" placeholder="Seu nome completo"
+                               [class.invalid]="!dataForm.controls['title'].valid && dataForm.controls['title'].touched">
+                    </ion-input>
+                </ion-item>
+                <ion-item class="error-message" *ngIf="!dataForm.controls['title'].valid
+        && dataForm.controls['title'].touched">
+                    <ion-label>Digite seu Nome Completo</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">
+                        <ion-icon name="mail" class="text-primary"></ion-icon>
+                        Email
+                    </ion-label>
+                    <ion-input formControlName="message" required type="email"
+                               placeholder="email@seuemail.com"></ion-input>
+                </ion-item>
+                <ion-item class="error-message" *ngIf="!dataForm.controls['message'].valid
+        && dataForm.controls['message'].touched">
+                    <ion-label>Digite seu email</ion-label>
+                </ion-item>
+
+                    <ion-button type="submit" [disabled]="!dataForm.valid" expand="full" color="dark" tappable>
+                        Criar conta
+                    </ion-button>
+
+<!--            </ion-list>-->
+        </form>
+    </div>
+</ion-content>
+<!--<ion-footer padding>-->
+<!--    <ion-button expand="full" type="submit" [disabled]="!dataForm.valid" color="dark" tappable (click)="registerStoreInfo()">-->
+<!--        Criar conta-->
+<!--    </ion-button>-->
+<!--</ion-footer>-->

@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Geolocation</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-card>
+      <div class="plr20">
+        <h4>Geolocation API</h4>
+        <p>The Geolocation API provides simple methods for getting and tracking the current position of the device
+          using GPS, along with altitude, heading, and speed information if available.</p>
+
+        <h6>Example</h6>
+        <b>Get your device geolocation info and use it to view on Google Map</b>
+      </div>
+
+    </ion-card>
+
+    <ion-card>
+      <div class="plr20">
+        <h6>Your current location</h6>
+
+        <div class="p10 border-light">
+          <ion-list>
+            <ion-row>
+              <ion-col>Latitude </ion-col>
+              <ion-col>{{latitude}} </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>Longitude </ion-col>
+              <ion-col>{{longitude}} </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>Accuracy </ion-col>
+              <ion-col>{{accuracy}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>Altitude</ion-col>
+              <ion-col>{{altitude}}</ion-col>
+            </ion-row>
+          </ion-list>
+        </div>
+
+        <ion-list *ngFor="let add of address">
+          <ion-item detail (click)="visitMap(add?.geometry.location.lat,add?.geometry.location.lat)">
+            {{add?.formatted_address}}
+          </ion-item>
+        </ion-list>
+
+      </div>
+    </ion-card>
+
+  </ion-row>
+
+
+</ion-content>

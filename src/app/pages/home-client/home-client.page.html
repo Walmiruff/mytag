@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+        <ion-col>
+            <img src="../assets/img/search.png" width="18px" style="margin-top: 5px;">
+        </ion-col>
+
+        <ion-title><img src="../assets/img/Logo-mini.png"></ion-title>
+
+        <ion-buttons style="float:right;">
+
+            <ion-col>
+                <img src="../assets/img/heart.png" width="20px">
+            </ion-col>
+            <ion-col>
+                <img src="../assets/img/explore.png" width="20px">
+            </ion-col>
+
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+    <h6 class="text-title" padding>Últimas novidades da moda</h6>
+
+    <hr class="dark">
+    <ion-grid>
+        <div [routerLink]="'/trip-detail/' + trip.id" trip-detail="true" *ngFor="let trip of trips" tappable>
+            <ion-row>
+                <ion-col col-4>
+
+                    <img src="{{trip.thumb}}" alt="" width="100%">
+                </ion-col>
+                <ion-col col-8>
+                    <small>{{ trip.time }} | Salvar</small>
+                    <h6 class="text-title-height">{{ trip.name }}</h6>
+                    <p maxlength="30">{{trip.description}}</p>
+                </ion-col>
+            </ion-row>
+            <div style="border: 1px solid #cacaca"></div>
+        </div>
+    </ion-grid>
+
+    <h6 class="text-title" padding>Lojas + perto de você</h6>
+    <hr class="dark">
+    <!--<div *ngFor="let store of stores">-->
+    <ion-item>
+        <ion-col size="4">
+            <h6><b>Shoulder</b></h6><small><a href=""> 4,5</a></small>
+
+        </ion-col>
+        <ion-col size="8">
+            <small>1,0km - Rua Oscar Freire, 819.</small><br>
+            <small>(11) 30864744</small>
+        </ion-col>
+
+    </ion-item>
+    <!--</div>-->
+
+
+    <!--list of trips-->
+    <!--<div class="trip card" *ngFor="let trip of trips" tappable (click)="viewDetail(trip.id)" margin-bottom>-->
+    <!--<div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + trip.thumb + ')'}">-->
+    <!--<div class="background-filter rlt">-->
+    <!--<div class="align-bottom" padding-left padding-right>-->
+    <!--<h6 class="pull-left text-white" ion-text>{{ trip.name }}</h6>-->
+    <!--<h6 class="pull-right text-white" ion-text>{{ trip.price_adult | currency:'USD':true }}</h6>-->
+    <!--<div class="clear"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="padding-sm primary-bg">-->
+    <!--<ion-icon name="time" class="text-white"></ion-icon>-->
+    <!--<span ion-text class="text-white">{{ trip.time }}</span>-->
+    <!--<span class="pull-right" ion-text color="light"><strong>per adult</strong> (childs has <span ion-text  class="text-green bold">50% OFF</span>)</span>-->
+    <!--</div>-->
+    <!--</div>-->
+</ion-content>

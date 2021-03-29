@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Share</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab id = "fab" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="share()">
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-row>
+    <ion-card style="background-color: #ECF3DC;">
+      <div class="p20">
+        <h4>Share API</h4>
+        <p>
+          The Share API provides methods for sharing content in any sharing-enabled apps the user may have installed.
+          The Share API works on iOS, Android, and the Web (using the new Web Share API).
+        </p>
+        <p>
+          <b>Currently this feature is only available on mobile browser that has Web Share API.</b>
+        </p>
+        <p>
+          We also use the Device API to get your Device info.
+        </p>
+      </div>
+    </ion-card>
+    <ion-card>
+      <div class="p20">
+        <h4>Example Application</h4>
+
+        <div id="share">
+          <h6>Share IonicPWA template with your friends.</h6>
+          <ion-button (click)="share()" class="cap text-white" shape="round" slot="start">
+            <ion-icon name="md-share"></ion-icon>
+            Share
+          </ion-button>
+        </div>
+
+        <div id="noshare" class="ptb20">
+          <h6 class="text-accent">Sorry, WebShare API is not available on this browser.</h6>
+        </div>
+
+        <p>Platform : {{deviceInfo?.platform}}</p>
+        <p>Model : {{deviceInfo?.model}}</p>
+        <p>OS Version : {{deviceInfo?.osVersion}}</p>
+
+      </div>
+    </ion-card>
+  </ion-row>
+
+</ion-content>

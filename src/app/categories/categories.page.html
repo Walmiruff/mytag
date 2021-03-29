@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<p> Selecione uma Categoria:</p>
+  <ion-item>
+    <li *ngFor="let category of categories">
+      {{category.name}}
+    </li>
+  </ion-item>
+</ion-content>

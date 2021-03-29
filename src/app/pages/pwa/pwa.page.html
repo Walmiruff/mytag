@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      PWA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-card style="background-color: #ECF3DC;">
+      <ion-card-header>
+        <ion-card-title>Progressive Web Apps (PWA)</ion-card-title>
+      </ion-card-header>
+      <div class="plr20">
+        <p>
+          The PWA can run in any browser and can be installed on your desktop and mobile phone It will act exactly like
+          any native apps, without the need to download from app store
+          We want to make it easier for you to get started with PWA development. The template scores 100% for PWA on
+          Lighthouse.
+        </p>
+        <p>
+          Follow our easy, step-by-step instructions, and within minutes, you will have a PWA similar to this, hosted
+          on your firebase hosting.
+        </p>
+        <p>
+          Add to Home Screen, sometimes referred to as the web app install prompt, makes it easy for users to install
+          your Progressive Web App on their mobile or desktop device. After the user accepts the prompt, your PWA will
+          be added to their launcher, and it will run like any other installed app.
+        </p>
+        <div id="browser" class="center p20">
+          <ion-button class="btn text-white" ion-button full (click)="add_to_home(event)" *ngIf="showBtn">
+            Add to Home Screen
+          </ion-button>
+        </div>
+        <div id="app" class="center p20">
+          Congratulations<br>
+          You have successfully installed the PWA.<br>
+          Now it is just like any normal apps.
+        </div>
+      </div>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Dont be left behind !!</ion-card-title>
+        <ion-card-subtitle> More and more Companies are using Progressive Web Apps to create better user
+          experiences,
+          anywhere the web runs. </ion-card-subtitle>
+      </ion-card-header>
+      <ion-list>
+        <ion-list-header>
+          Have a look at the following :
+        </ion-list-header>
+        <ion-item (click)="visit('https://app.starbucks.com/')" detail>
+          <ion-icon slot="start" color="medium" name="md-apps"></ion-icon>
+          Starbucks PWA expands their reach and makes the experience of ordering better.
+        </ion-item>
+        <ion-item (click)="visit('https://www.pinterest.com/')"  detail>
+          <ion-icon slot="start" color="medium" name="md-apps"></ion-icon>
+          Pinterest build a PWA and saw a 44% increase in their overall as revenue.
+        </ion-item>
+
+        <ion-item (click)="visit('https://m.uber.com')"  detail>
+          <ion-icon slot="start" color="medium" name="md-apps"></ion-icon>
+          Uber built their PWA to better serve customers as the expand into new markets and regions.
+        </ion-item>
+        <ion-item (click)="visit('https://lyft.com')" detail>
+          <ion-icon slot="start" color="medium" name="md-apps"></ion-icon>
+          Lyft built their PWA to better serve their drivers and riders in new, emerging markets
+        </ion-item>
+
+        <ion-item (click)="visit('https://twitter.com/')" detail>
+          <ion-icon slot="start" color="medium" name="md-apps"></ion-icon>
+          Twitter's PWA saw a 65% increase in pages per session and 75% increase in tweets
+        </ion-item>
+        <ion-item (click)="visit('https://www.forbes.com')" detail>
+          <ion-icon slot="start" color="medium" name="md-apps"></ion-icon>
+          Forbes built a PWA that garnered a 100% increase in time spent on their app
+        </ion-item>
+
+      </ion-list>
+    </ion-card>
+
+  </ion-row>
+
+</ion-content>

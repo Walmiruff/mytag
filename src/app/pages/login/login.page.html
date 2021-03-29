@@ -1,0 +1,55 @@
+<ion-content padding>
+
+    <div style="margin: 200px 0 0 0;">
+        <img src="assets/img/Logo.png" class="img-center">
+        <p text-center>
+            Conectando você ao seu estilo.
+        </p>
+    </div>
+    <div>
+<!--        <form class="list-form" [formGroup]="loginUser()" >-->
+<!--            <ion-item>-->
+<!--                <ion-label position="floating">-->
+<!--                    <ion-icon name="mail" class="text-primary"></ion-icon>-->
+<!--                    Digite seu email-->
+<!--                </ion-label>-->
+<!--                <ion-input type="email" placeholder="email@seuemail.com"  formControlName="email"></ion-input>-->
+<!--            </ion-item>-->
+<!--            <ion-item>-->
+<!--                <ion-label position="floating">-->
+<!--                    <ion-icon name="mail" class="text-primary"></ion-icon>-->
+<!--                    Senha:-->
+<!--                </ion-label>-->
+<!--                <ion-input type="password" formControlName="password"></ion-input>-->
+<!--            </ion-item>-->
+<!--            <ion-button type="submit" (click)="loginUser(loginForm)" expand="full" color="dark" tappable>-->
+<!--                Entrar-->
+<!--            </ion-button>-->
+<!--        </form>-->
+
+
+        <ion-button expand="full" color="dark" tappable (click)="loginEmail()">
+            Entrar com Email
+        </ion-button>
+
+        <p text-center color="secondary">Ou entre com:</p>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-button (click)="loginFacebook()" expand="full" color="tertiary">
+                        <ion-icon name="logo-facebook" color="light"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="loginGoogle()" expand="full" color="danger">
+                        <ion-icon name="logo-googleplus" color="light"></ion-icon>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <p text-center (click)="registerStore()">Cadastre sua <strong>loja</strong></p>
+        </ion-grid>
+
+    </div>
+
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Browser</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-card style="background-color: #DBE4E7;">
+      <div class="p20">
+        <h4>Browser API</h4>
+        <p>
+          The Browser API makes it easy to open an in-app browser session to show external web content, handle
+          authentication flows, and more.
+          On iOS this uses SFSafariViewController and is compliant with leading oAuth service in-app-browser
+          requirements.
+        </p>
+        <h4><br>Example</h4>
+        <p>Open links in In-App-Browser. </p>
+
+      </div>
+    </ion-card>
+    <ion-card >
+
+      <ion-list>
+        <ion-list-header>
+          <h6>Click on any links below</h6>
+        </ion-list-header>
+        <ion-item (click)="visit('https://ionicframework.com/')" detail>
+          Ionic Framework
+        </ion-item>
+        <ion-item (click)="visit('https://blog.ionicframework.com/')" detail>
+          Ionic Framework Blog
+        </ion-item>
+        <ion-item (click)="visit('https://ionicframework.com/pwa')" detail>
+          Ionic PWA
+        </ion-item>
+        <ion-item (click)="visit('https://capacitor.ionicframework.com/')" detail>
+          Capacitor: Universal Web Applications
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+  </ion-row>
+
+</ion-content>

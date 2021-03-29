@@ -1,0 +1,63 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="profile-store" [text]="buttonText"></ion-back-button>
+
+            <!--            <ion-menu-button></ion-menu-button>-->
+        </ion-buttons>
+        <!--        <ion-col>-->
+        <!--            <img src="../assets/img/search.png" width="18px" style="margin-top: 5px;">-->
+        <!--        </ion-col>-->
+
+        <ion-title><img src="../assets/img/Logo-mini.png"></ion-title>
+
+        <ion-buttons style="float:right;">
+
+            <ion-col>
+                <img src="../assets/img/heart.png" width="20px">
+            </ion-col>
+            <ion-col>
+                <img src="../assets/img/explore.png" width="20px">
+            </ion-col>
+
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            <ion-grid (click)="favorite()">
+                <img src="../assets/img/thumb/feature_02.jpg" style="width: 100%;">
+                <div class="favorite">
+                    <ion-icon name="heart" class="fvt-heart"></ion-icon>
+                </div>
+            </ion-grid>
+        </ion-card-header>
+        <ion-card-content>
+            <p>Blusa inverno de crochê</p>
+            <small class="price">R$ 100,00 em até 5x</small>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <button class="button-price"><a href="https://goo.gl/maps/VXSnckWc9EvViwMaA">Traçar Rota</a></button>
+                    </ion-col>
+                    <ion-col>
+                        <button class="button-price">Ligar Agora</button>
+                    </ion-col>
+
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <button class="button-price">WhatsApp</button>
+                    </ion-col>
+                    <ion-col>
+                        <button class="button-price"><a href="https://www.zara.com/br/">Comprar Online</a></button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+
+    </ion-card>
+</ion-content>

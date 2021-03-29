@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Members</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-card>
+      <div class="center p20">
+        <img class="profile" src="{{userProfile?.photo}}">
+        <h4> {{userProfile?.name }}</h4>
+        <h6> {{userProfile?.email}}</h6>
+        <ion-button (click)="logOut()" class="cap" shape="round" size="small" fill="outline">
+          <ion-icon name="log-out"></ion-icon>
+          Logout
+        </ion-button>
+      </div>
+
+    </ion-card>
+
+    <ion-card>
+        <div class="p20">
+            <h4>Welcome</h4>
+            <p>This is the user's profile page</p>
+          </div>
+    </ion-card>
+  </ion-row>
+
+</ion-content>

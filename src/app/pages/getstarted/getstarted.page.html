@@ -1,0 +1,204 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Get Started</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-card>
+      <div class=p10>
+        <h6>1. Platform Setup</h6>
+        <ul>
+          <li>
+            <p>Make sure you have an up-to-date version of Node.js installed on your system. If you don't have Node.js
+              installed, you can install it from </p>
+              <div class="p5" (click)="visit('https://nodejs.org/en/download/')">
+                <b><u>https://nodejs.org/en/download</u></b>
+              </div>
+          </li>
+          <li>
+            <p>Open a terminal window (Mac) or a command window (Windows), and install Cordova and Ionic:</p>
+            <div class="p5 border-light">npm install -g cordova ionic</div>
+            <p>On a Mac, you may have to use sudo depending on your system configuration:</p>
+            <div class="p5 border-light">sudo npm install -g cordova ionic</div>
+            <p>If you already have Cordova and Ionic installed on your computer, make sure you update to the latest
+              version:</p>
+            <div class="p5 border-light">npm update -g cordova ionic</div>
+            <p>OR</p>
+            <div class="p5 border-light">sudo npm update -g cordova ionic</div>
+          </li>
+          <li>
+            <p>Install your code editor such as Visual Studio Code or Atom</p>
+          </li>
+        </ul>
+      </div>
+    </ion-card>
+    <ion-card>
+      <div class=p10>
+        <h6>2. Set-up Firebase</h6>
+      </div>
+      <ul>
+        <li>
+          <p>Sign-up for Firebase</p>
+          <div class="p5" (click)="visit('https://firebase.google.com/')">
+            <b><u>https://firebase.google.com/</u></b>
+          </div>
+    
+         </li>
+        <li>
+          <p>Go to Firebase Console</p>
+          <div class="p5" (click)="visit('https://console.firebase.google.com')">
+            <b><u>https://console.firebase.google.com</u></b>
+          </div>
+        </li>
+        <li>
+          <p>Add your Project</p>
+        </li>
+        <li>
+          <p>Get you Firebase configuration file</p>
+          <p>Go to <b>Project Settings/General</b> and click <b>Add Firebase to your Website</b> icon</p>
+          <p>Copy the configuration file. You will need it later to paste in your src/apps/credentials.ts file when you
+            install and setup the template in Item 4 below.</p>
+        </li>
+      </ul>
+
+    </ion-card>
+  </ion-row>
+
+  <ion-row>
+    <ion-card>
+
+      <div class=p10>
+        <h6>3. Set-up Authentication</h6>
+        <ul>
+          <li>
+            <p>Go to Firebase Console</p>
+            <div class="p5" (click)="visit('https://console.firebase.google.com')">
+              <b><u>https://console.firebase.google.com</u></b>
+            </div>   
+           </li>
+          <li>
+            <p>Go to <b>Authentication/Sign-in method</b></p>
+          </li>
+          <li>
+            <p>Enable Google</p>
+            <p>For Google authentication, it will be setup automatically.</p>
+          </li>
+          <li>
+            <p>Enable Facebook</p>
+            <p>Go to Facebook Developer page to get your App ID and App Secret </p>
+            <div class="p5" (click)="visit('https://developers.facebook.com/apps/')">
+              <b><u>https://developers.facebook.com/apps/</u></b>
+            </div>
+          
+            <p>Add the OAuth redirect URI (from Firebase) to your Facebook app configuration.</p>
+            <p>For information on how to setup your facebook apps please refer to:</p>
+            <div class="p5" (click)="visit('https://developers.facebook.com/docs/apps/')">
+              <b><u>https://developers.facebook.com/docs/apps/</u></b>
+            </div>
+         
+            <p>Update your facebook App ID and App Secret in firebase</p>
+          </li>
+        </ul>
+
+      </div>
+
+    </ion-card>
+    <ion-card>
+
+      <div class=p10>
+        <h6>4. Install and Set-up Template</h6>
+        <ul>
+          <li>
+            <p>Unzip the Template file to your project directory</p>
+          </li>
+          <li>
+            <p>
+              Open a terminal window (Mac) or a command window (Windows),
+              and navigate to the project directory.</p>
+          </li>
+          <li>
+            <p>Install the server dependencies:</p>
+            <div class="p5 border-light">npm install</div>
+          </li>
+          <li>
+            <p>Open your project using Visual Studio Code or Atom</p>
+            <p>Open your Firebase Configuration file at <b>src/apps/credentials.ts</b></p>
+            <p>Follow the instruction in the credentials.ts file</p>
+          </li>
+          <li>
+            <p>Test it in your browser.</p>
+            <div class="p5 border-light">ionic serve</div>
+          </li>
+          <li>
+            <p><b>If you follow all the Steps from 1 - 4, your apps will be displayed in your browser.</b></p>
+          </li>
+        </ul>
+      </div>
+    </ion-card>
+  </ion-row>
+
+  <ion-row>
+    <ion-card>
+      <div class=p10>
+        <h6>5. Host it on Firebase Hosting</h6>
+        <ul>
+          <li>
+            <p>Open a terminal window (Mac) or a command window (Windows) and go to your project directory</p>
+          </li>
+          <li>
+            <p>Install the Firebase CLI.</p>
+            <div class="p5 border-light">npm install -g firebase-tools</div>
+          </li>
+          <li>
+            <p>Initialize your site</p>
+            <div class="p5 border-light">firebase init</div>
+          </li>
+          <li>
+            <p>On subsequent build and deploy, you do not need to do the above 2 steps. </p>
+          </li>
+          <li>
+            <p>Build your project</p>
+            <div class="p5 border-light">ionic build --prod</div>
+          </li>
+          <li>
+            <p>Deploy your site. Upon completion, go to the URL provided.</p>
+            <div class="p5 border-light">firebase deploy</div>
+          </li>
+          <li>
+            <p><b>CONGRATULATION</b></p>
+            <p><b>You Apps is now LIVE. </b></p>
+          </li>
+        </ul>
+      </div>
+    </ion-card>
+
+    <ion-card>
+      <div class="center p20">
+        <h4>GET THE IONIC 4 TEMPLATE NOW</h4>
+        <h6>Just follow the Step-by-Step Instructions
+          and within minutes, you will have a fully functional Ionic 4 PWA Apps similar to this.
+        </h6>
+        <h6>Use it as Starter template to start all you projects.</h6>
+
+        <div class="p20 center">
+            <h4>For a limited time, get it at</h4>
+            <h1 class="text-accent fw900 ">USD 20.00 Only</h1>
+          </div>
+        <div class="center p20">
+          <ion-button (click)="visit('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NTXHF8GVJTT7A')"  fill="clear">
+            <ion-img style="width:160px;margin: auto; display: block;" src="/assets/img/btnBuy.png"></ion-img>
+          </ion-button>
+          <ion-img style="width:300px;margin: auto; display: block;" src="/assets/img/creditcards.png"></ion-img>
+        </div>
+      </div>
+    </ion-card>
+
+  </ion-row>
+
+
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clipboard</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-card style="background-color: #ECF3DC;">
+      <div class="p20">
+        <h4>Clipboard API</h4>
+        <p>
+          The Clipboard API enables copy and pasting to/from the clipboard. On iOS this API also allows copying images
+          and URLs.
+        </p>
+        <h4><br>Example Application</h4>
+        <h6>Copy text from top box and paste to bottom box</h6>
+
+      </div>
+    </ion-card>
+    <ion-card>
+      <div class="p20">
+
+        <div class="pb20">
+          <ion-textarea [ngModel]="testMessage" class="border-light p10" readonly rows="3" type='text'></ion-textarea>
+          <ion-button (click)="copyToClipboard()" class="cap" shape="round" size="small" fill="outline">
+            Copy Text to Clipboard
+          </ion-button>
+          <ion-button (click)="copyURL()" class="cap" shape="round" size="small" fill="outline">
+              Copy URL to Clipboard
+          </ion-button>
+        </div>
+
+        <ion-textarea [ngModel]="copiedMessage" class="border-light p10" rows="3" type='text'></ion-textarea>
+        <i>Please paste the copied text to the textbox</i>
+
+
+      </div>
+    </ion-card>
+  </ion-row>
+
+</ion-content>

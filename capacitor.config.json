@@ -1,0 +1,6 @@
+{
+  "appId": "com.firebaseapp.ionicpwatemplate",
+  "appName": "ionicPWA",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

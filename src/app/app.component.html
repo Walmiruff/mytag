@@ -1,0 +1,50 @@
+<ion-app>
+    <ion-split-pane>
+        <ion-menu>
+            <div class="p10 center">
+                <img style="width: 120px;" src="../assets/img/Logo.png">
+            </div>
+            <ion-content>
+
+                <!--        <ion-list>-->
+                <!--          <ion-menu-toggle>-->
+                <!--            <ion-item class="item-height">-->
+                <!--              <ion-icon slot="start"></ion-icon>-->
+                <!--              <ion-label>-->
+                <!--                <p>Categorias</p>-->
+                <!--                <p>Sobre</p>-->
+
+                <!--              </ion-label>-->
+                <!--            </ion-item>-->
+                <!--          </ion-menu-toggle>-->
+                <!--        </ion-list>-->
+                <ion-list>
+                    <ion-list-header><b>Menu</b></ion-list-header>
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+                        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" class="item-height">
+                            <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                            <ion-label>
+                                {{p.title}}
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
+
+                <ion-list>
+                    <ion-list-header><b>Ionic 4 Template</b></ion-list-header>
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of ionicPages">
+                        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" class="item-height">
+                            <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                            <ion-label>
+                                {{p.title}}
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
+
+
+            </ion-content>
+        </ion-menu>
+        <ion-router-outlet main></ion-router-outlet>
+    </ion-split-pane>
+</ion-app>
